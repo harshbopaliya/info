@@ -26,14 +26,12 @@ skills.add("[cyan]Machine Learning, Data Visualization")
 experience = tree.add("💼 [bold yellow]Experience", guide_style="green")
 experience.add("[bold red]Data Analysis Intern | IBM CSRBOX")
 experience.add("🔹 [green]Built dashboards in Power BI & SQL")
-
 experience.add("[bold red]Code Unnati Program | ML Training")
 experience.add("🔹 [green]Completed modules in ML & Computer Vision")
 
-# Create about panel with matching width
+# Create about panel
 about = """
-[cyan]Engineering student with experience in data analysis and machine learning.
-Created dashboards and predictive models, passionate about AI and continuous learning.[/cyan]
+[cyan]Engineering student with experience in data analysis and machine learning. Created dashboards and predictive models, passionate about AI and continuous learning.[/cyan]
 """
 
 # Create panel with padding and matching width
@@ -42,18 +40,18 @@ panel = Panel(
     title="[bold yellow]Hello! 👋",
     box=box.DOUBLE,
     border_style="blue",
-    width=60
+    width=58  # Adjusted width to match tree
 )
 
-# Create balanced columns layout horizontally
+# Create horizontal layout using Columns
 layout = Columns(
     [panel, tree],
-    equal=True,
-    expand=False,
-    padding=(0, 2)
+    equal=True,  # Make columns equal width
+    expand=True,  # Allow columns to expand
+    padding=(0, 2)  # Add padding between columns
 )
 
-# Print layout with horizontal alignment
+# Print layout
 console.print()
 console.print(layout)
 console.print()
