@@ -4,6 +4,7 @@ from rich.panel import Panel
 from rich.tree import Tree
 from rich.columns import Columns
 from rich.padding import Padding
+from rich.align import Align
 
 # Initialize console with record=True
 console = Console(width=120, record=True)
@@ -29,29 +30,31 @@ experience.add("🔹 [green]Built dashboards in Power BI & SQL")
 experience.add("[bold red]Code Unnati Program | ML Training")
 experience.add("🔹 [green]Completed modules in ML & Computer Vision")
 
-# Create about panel
-about = """
-[cyan]Engineering student with experience in data analysis and machine learning. Created dashboards and predictive models, passionate about AI and continuous learning.[/cyan]
-"""
+# Create about panel with more concise text
+about = """[cyan]Engineering student with experience in data analysis and machine learning. Created dashboards and predictive models, passionate about AI and continuous learning.[/cyan]"""
 
-# Create panel with padding and matching width
+# Create panel with adjusted width
 panel = Panel(
     Padding(about, (1, 2)),
     title="[bold yellow]Hello! 👋",
     box=box.DOUBLE,
     border_style="blue",
-    width=58  # Adjusted width to match tree
+    width=50  # Reduced width
 )
 
-# Create horizontal layout using Columns
+# Create the layout with proper spacing
 layout = Columns(
-    [panel, tree],
-    equal=True,  # Make columns equal width
-    expand=True,  # Allow columns to expand
-    padding=(0, 2)  # Add padding between columns
+    [
+        Align.left(panel),
+        Align.left(tree)
+    ],
+    equal=False,
+    expand=False,
+    align="left",
+    padding=(0, 1)
 )
 
-# Print layout
+# Print final layout
 console.print()
 console.print(layout)
 console.print()
