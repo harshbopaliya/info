@@ -45,7 +45,7 @@ panel = Panel(
     width=60
 )
 
-# Create balanced columns
+# Create balanced columns layout horizontally
 layout = Columns(
     [panel, tree],
     equal=True,
@@ -53,7 +53,7 @@ layout = Columns(
     padding=(0, 2)
 )
 
-# Print with padding
+# Print layout with horizontal alignment
 console.print()
 console.print(layout)
 console.print()
